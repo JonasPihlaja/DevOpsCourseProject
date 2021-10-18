@@ -1,0 +1,30 @@
+{
+  "name": "Course-Project",
+  "version": "1.0.0",
+  "description": "START",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonasPihlaja/DevOpsCourseProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonasPihlaja/DevOpsCourseProject/issues"
+  },
+  "homepage": "https://github.com/JonasPihlaja/DevOpsCourseProject#readme",
+  "dependencies": {
+    "@slack/bolt": "^3.7.0",
+    "yarn": "^1.22.17"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "jest": "^27.3.0",
+    "nodemon": "^2.0.13"
+  }
+}
