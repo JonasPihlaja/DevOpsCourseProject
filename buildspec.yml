@@ -8,6 +8,7 @@ phases:
     commands:
       - echo Build started on `date`
       - yarn install
+      - yarn test
   post_build:
     commands:
       - echo Build completed on `date`
