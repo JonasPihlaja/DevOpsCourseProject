@@ -1,8 +1,9 @@
 const express = require('express');
 const receiver = express();
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const request = require('request')
+
 
 let notificationsArr = [];
 
@@ -39,7 +40,7 @@ function setNotification(payload){
     if(notificationsArr.length > 0){
         for(let i = 0; i>notificationsArr.length; i++){
             if (notificationsArr[i].id == notification.id) {
-                idUnique == false;
+                idUnique = false;
             } 
         }
         if(idUnique == true){
@@ -60,7 +61,7 @@ module.exports.listener = receiver;
 
 
 /*
-THIS WAS USED TO ACCEPT A SUBSCRIPTION FOR AN AWS NOTIFICATION SERVICE
+//THIS WAS USED TO ACCEPT A SUBSCRIPTION FOR AN AWS NOTIFICATION SERVICE
 receiver.use(bodyParser.urlencoded({ extended: false }))
 receiver.use(bodyParser.json())
 
@@ -95,4 +96,5 @@ receiver.post('/notifications', (req, res) => {
       }
     })
   });
-*/
+
+  receiver.listen(3000, () => console.log(`Receiver listening on port 3000`));*/
