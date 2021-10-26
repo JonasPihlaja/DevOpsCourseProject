@@ -11,19 +11,15 @@ let notificationsArr = [];
 
 receiver.router.post('/notifications', (req, res) => {
   let body = ''
-
   req.on('data', (chunk) => {
     body += chunk.toString()
   });
-
   req.on('end', () => {
       let payload = JSON.parse(body)
-      //console.log(payload)
       setNotification(payload)
   });
   return res.end("ok");
 });
-
 
 receiver.router.post('/rockpaperscissor', async (req, res) => {
   let result = `To play, choose rock :facepunch:, paper:raised_hand_with_fingers_splayed: or scissor:v: 
@@ -39,7 +35,6 @@ const app = new App({
 });
 
 receiver.router.post('/checktopic', (req, res) => {
-  // You're working with an express req and res now.
   let text = 'Notifications since last server restart: ';
   for(let i=0; i<notificationsArr.length; i++){
     text += `
@@ -57,7 +52,6 @@ receiver.router.post('/checktopic', (req, res) => {
   const port = 3000
   // Start your app
   await app.start(process.env.PORT || port);
-  //app.action()
   console.log(`⚡️ Slack Bolt app is running on port ${port}!`);
 
 })();
